@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="800.0" prefWidth="1200" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ui.GraphController" >
+   <children>
+       <Pane prefHeight="800.0" prefWidth="300.0">
+           <children>
+               <Label layoutX="71.0" layoutY="30.0" text="Choose approximation type " />
+               <ChoiceBox fx:id="approximationType" layoutX="83.0" layoutY="62.0" prefWidth="150.0" />
+
+               <Label layoutX="49.0" layoutY="128.0" text="x: " />
+               <TextField layoutX="83.0" layoutY="132.0" fx:id="x" />
+
+               <Label layoutX="49.0" layoutY="163.0" text="y: " />
+               <TextField fx:id="y" layoutX="83.0" layoutY="164.0" />
+
+               <Label layoutX="50.0" layoutY="264.0" text="n:" />
+               <TextField fx:id="numberOfDots" layoutX="83.0" layoutY="259.0" prefHeight="27.0" prefWidth="140.0" />
+
+               <Button layoutX="157.0" layoutY="201.0" mnemonicParsing="false" onAction="#addDot" prefHeight="27.0" prefWidth="105.0" text="Add dot" />
+               <Button layoutX="104.0" layoutY="310.0" mnemonicParsing="false" onAction="#generateDots" text="Generate dots" />
+
+               <Button layoutX="95.0" layoutY="376.0" mnemonicParsing="false" onAction="#drawGraph" text="Draw graph">
+                   <font>
+                       <Font size="17.0" />
+                   </font>
+               </Button>
+
+               <Label fx:id="error" layoutX="66.0" layoutY="464.0" textFill="red" />
+            <Button fx:id="clear" layoutX="54.0" layoutY="201.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+            <Label fx:id="coef1" layoutX="66.0" layoutY="533.0"/>
+            <Label fx:id="coef2" layoutX="66.0" layoutY="590.0"/>
+           </children>
+       </Pane>
+
+
+       <LineChart fx:id="chart" legendVisible="false" prefHeight="800.0" prefWidth="900.0">
+           <xAxis>
+               <NumberAxis autoRanging="false" lowerBound="-20.0" upperBound="50.0" />
+           </xAxis>
+           <yAxis>
+               <NumberAxis autoRanging="false" lowerBound="-20.0" side="LEFT" upperBound="30.0" />
+           </yAxis>
+       </LineChart>
+
+
+   </children>
+</HBox>
